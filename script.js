@@ -10,9 +10,7 @@ $("#currentDay").append(document.createTextNode(displayDate));
 
 // WHEN I scroll down I am presented with time blocks for standard business hours
 
-// WHEN I view the time blocks for that day
-
-// THEN each time block is color-coded to indicate whether it is in the past, present, or future
+// WHEN I view the time blocks for that day each time block is color-coded to indicate whether it is in the past, present, or future
 
 
 $('.input-group-prepend').each(function (i, value) {
