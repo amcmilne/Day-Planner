@@ -21,8 +21,11 @@ $('.input-group-prepend').each(function (i, value) {
 
         if (selectedTime.isBefore(currentTime))
             $(this).children().css("background-color", "red");
-        else
-            $(this).children().css("background-color", "blue");
+
+        else if (selectedTime.isSame(currentTime))
+            $(this).children().css("background-color", "yellow");
+
+        else $(this).children().css("background-color", "blue");
     }, function () {
         $(this).children().css("background-color", "");
     });
@@ -35,16 +38,16 @@ let saveButtons = document.querySelectorAll('button[type=button][id="button-addo
 for (var i = 0; i < saveButtons.length; i++) {
     saveButtons[i].addEventListener("click", saveScheduledEvent);
 }
-  
+
 // THEN the text for that event is saved in local storage
-function saveScheduledEvent(){
-    localStorage.setItem($(this).parentsUntil( ".container" ).children().children().eq(1).text(), $(this).parent().parent().children()[1].value.trim());
+function saveScheduledEvent() {
+    localStorage.setItem($(this).parentsUntil(".container").children().children().eq(1).text(), $(this).parent().parent().children()[1].value.trim());
 }
 
 // WHEN I refresh the page, the saved events persist
 var timeSlots = document.querySelectorAll('.input-group-text');
-for (var i = 0; i < timeSlots.length; i++){
+for (var i = 0; i < timeSlots.length; i++) {
     let ts = timeSlots[i].textContent;
     let agendaText = localStorage.getItem(ts);
-    $(timeSlots[i]).parentsUntil( ".container" ).children().eq(2).text(agendaText);
+    $(timeSlots[i]).parentsUntil(".container").children().eq(2).text(agendaText);
 }
