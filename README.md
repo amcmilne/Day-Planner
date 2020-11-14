@@ -3,8 +3,8 @@
 
 ### My Work can be found at: 
 
-  - https://amcmilne.github.io/Code-Quiz/
-  - https://github.com/amcmilne/Code-Quiz
+  - https://amcmilne.github.io/Day-Planner/
+  - https://github.com/amcmilne/Day-Planner
  
 
 # Tools I used: 
